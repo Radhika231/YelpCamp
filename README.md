@@ -30,6 +30,6 @@ A yelp type website for camps built using MongoDB, Express & Nodejs.
  
 ## View YelpCamp
 To view the yelpcamp website go to:
-https://protected-peak-90890.herokuapp.com/campgrounds
+https://protected-peak-90890.herokuapp.com/
 
 
