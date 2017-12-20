@@ -8,7 +8,7 @@ var passport=require('passport');
 //===========================
 //Register route
 router.get("/register",function(req, res) {
-    res.render("register");
+    res.render("register",{page:'register'});
 });
 
 //handling user sign up
@@ -18,9 +18,8 @@ router.post("/register",function(req, res) {
     User.register(newUser,req.body.password,function(err,user){
         if(err)
         {
-            req.flash("error",err.message);
             res.locals.error = req.flash("error");//needed when redirecting to same page for flash message to be displayed
-            return res.render("register");
+            return res.redirect("/register");
         }
         else
         {
@@ -37,7 +36,7 @@ router.post("/register",function(req, res) {
 
 //Login Routes
 router.get("/login",function(req, res) {
-    res.render("login");
+    res.render("login",{page:'login'});
 });
 
 //middleware- code that runs before the final callback. sit between beginning & end of the route.
